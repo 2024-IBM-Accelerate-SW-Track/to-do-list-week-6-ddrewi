@@ -61,6 +61,8 @@ async function addItem (request, response) {
 app.get("/get/items", getItems)
 async function getItems (request, response) {
     //begin here
+    var data = await fsPromises.readFile("database.json");
+    response.json(JSON.parse(data));
 
 };
 
